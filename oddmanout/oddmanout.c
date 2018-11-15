@@ -4,6 +4,8 @@
 void pr(int n, int pair[], int guest[]){
     for(int x=0;x<1000;x++)
         if(pair[x]==0){
+            if(pair[x]==-1)
+                return;
             printf("Case #%d: %d\n", n+1, guest[x]);
             return;
         }
