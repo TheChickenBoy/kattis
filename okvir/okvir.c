@@ -9,23 +9,33 @@ int main(void){
                 if(fscanf(stdin,"%s",&words[i*n]));
 
             for(int j=0;j<u;j++){
-                for(int x=0;x<n;x++){
-                    if((pr%2==0 && x%2==0)|| x%2==0 )
+                for(int x=0;x<n+r+l;x++){
+                    if(pr%2==0 && x%2==0)
                         printf("#");
-                    else
+                    else if((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0))
                         printf(".");
+                    else
+                        printf("#");
                 }
                 pr++;
+                printf("\n");
             }
-            //printf("\n%d\n", pr);
-            //return 0;
-            printf("\n");
+
+            char c;
             for(int j=0;j<m;j++){
                 for(int x=0;x<l;x++){
-                    if((j%2==0 && x%2==0) || (j%2==0 && x%2!=0) )
-                        printf(".");
-                    else
+                    if((pr%2==0 && x%2==0)){
                         printf("#");
+                        c = '#';
+                    }
+                    else if((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0)){
+                        printf(".");
+                        c = '.';
+                    }
+                    else{
+                        printf("#");
+                        c = '#';
+                    }
                 }
                 for(int ti=0;ti<n;ti++){
                     if(words[wi]=='\0')
@@ -34,22 +44,35 @@ int main(void){
                     wi++;
                 }
                 for(int x=0;x<r;x++){
-                    if((pr%2==0 && x%2==0)|| x%2==0)
+                    if((pr%2==0 && x%2==0)&&c!='#'){
                         printf("#");
-                    else
+                        c = ' ';
+                    }
+                    else if(c!='.'&&((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0))){
                         printf(".");
+                        c = ' ';
+                    }
+                    else{
+                        printf("#");
+                        c = ' ';
+                    }
                 }
                 pr++;
                 printf("\n");
             }
+
+
             for(int j=0;j<d;j++){
-                for(int x=0;x<n;x++){
-                    if((pr%2==0 && x%2==0)|| x%2==0 )
+                for(int x=0;x<n+r+l;x++){
+                    if(pr%2==0 && x%2==0)
                         printf("#");
-                    else
+                    else if((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0))
                         printf(".");
+                    else
+                        printf("#");
                 }
                 pr++;
+                printf("\n");
             }
         }
 
