@@ -21,20 +21,16 @@ int main(void){
                 printf("\n");
             }
 
-            char c;
             for(int j=0;j<m;j++){
                 for(int x=0;x<l;x++){
                     if((pr%2==0 && x%2==0)){
                         printf("#");
-                        c = '#';
                     }
                     else if((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0)){
                         printf(".");
-                        c = '.';
                     }
                     else{
                         printf("#");
-                        c = '#';
                     }
                 }
                 for(int ti=0;ti<n;ti++){
@@ -44,17 +40,14 @@ int main(void){
                     wi++;
                 }
                 for(int x=0;x<r;x++){
-                    if((pr%2==0 && x%2==0)&&c!='#'){
-                        printf("#");
-                        c = ' ';
+                    if((pr%2==0 && x%2==0 && x%2==0)){
+                        printf((n+l) % 2 == 0  ? "#" : ".");
                     }
-                    else if(c!='.'&&((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0))){
-                        printf(".");
-                        c = ' ';
+                    else if(((pr%2!=0 && x%2==0)|| (pr%2==0 && x%2!=0))){
+                        printf((n+l) % 2 == 0  ? "." : "#");
                     }
                     else{
-                        printf("#");
-                        c = ' ';
+                        printf((n+l) % 2 == 0  ? "#" : ".");
                     }
                 }
                 pr++;
