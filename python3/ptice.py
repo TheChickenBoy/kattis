@@ -1,13 +1,24 @@
-n = int(input())
-l = input()
-x = ap = bp = gp = 0
-aa = ['A','B','C']*4
-ba = ['B','A','B','C']*3
-ga = ['C','C','A','A','B','B']*2
+aa = ['A','B','C','A','B','C','A','B','C','A','B','C']
+ba = ['B','A','B','C','B','A','B','C','B','A','B','C']
+ga = ['C','C','A','A','B','B','C','C','A','A','B','B']
+ap = bp = gp = 0
 
-print(aa)
-print(ba)
-print(ga)
-for i,c in enumerate(l):
-    x = i
-    if
+n = int(input())
+s = input()
+
+for i,c in enumerate(s):
+    if c == aa[i%12]:
+        ap+=1
+    if c == ba[i%12]:
+        bp+=1
+    if c == ga[i%12]:
+        gp+=1
+
+t = max(ap,bp,gp)
+print(t)
+if t == ap:
+    print("Adrian")
+if t == bp:
+    print("Bruno")
+if t == gp:
+    print("Goran")
