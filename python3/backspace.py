@@ -1,18 +1,22 @@
 l = input()
-#s=[]
 s = ""
-t = 0
+indexs = []
+index = 0
 for i, c in enumerate(l):
-    if c == "<":
-        l[i] = "\0"
-        t+=1 
-    elif t>0:
-        l[i] = '\0'
-        t-=1
-        #s.append(c)
+    if c != '<':
         #s+=c
-o=''
-for i in len(l):
-    if l[i]!='\0':
-        o+=l[i]     
+        #index += 1
+        indexs.append(i)
+    #else:
+    #    if index > 0:
+    #        index -= 1
+        #index.append[i]
+o=""
+for i in indexs:
+    o+=l[i]
+    #if c == "<":
+    #    s = s[:-1]
+    #else:
+    #    s+=c
 print(o)
+#print(s[0:index])
