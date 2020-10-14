@@ -1,22 +1,17 @@
-l = input()
+l = list(input())
 s = ""
-indexs = []
-index = 0
-for i, c in enumerate(l):
-    if c != '<':
-        #s+=c
-        #index += 1
-        indexs.append(i)
-    #else:
-    #    if index > 0:
-    #        index -= 1
-        #index.append[i]
-o=""
-for i in indexs:
-    o+=l[i]
-    #if c == "<":
-    #    s = s[:-1]
-    #else:
-    #    s+=c
-print(o)
-#print(s[0:index])
+count = 0
+for c in reversed(l):
+    if c == '<':
+        count+=1
+        #l[i] = '\0'
+    elif count > 0:
+        count-=1
+        #l[i] = '\0'
+    else:
+        s = c + s    
+print(s)
+# for c in l:
+#     if c != '\0':
+#         s+=c
+# print(s)
