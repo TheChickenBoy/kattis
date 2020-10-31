@@ -1,0 +1,1 @@
+print(min(.25,(float(input())/2)**2))

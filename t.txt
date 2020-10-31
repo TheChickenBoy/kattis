@@ -1,3 +1,3 @@
 10kinds, backspace, bridgesandtunnels
 
-forests
+forests <- enkel, orkar inte tänka
