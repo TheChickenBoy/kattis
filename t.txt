@@ -1,3 +1,3 @@
-10kinds, backspace, bridgesandtunnels
+10kinds, backspace, bridgesandtunnels - timelimit
 
 forests <- enkel, orkar inte tänka
