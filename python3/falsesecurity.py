@@ -75,7 +75,6 @@ for l in stdin:
         t = d[c]
         s.append(t[0])
         ns += t[1]
-    i = 0
 
     s = reversed(s)
     for n in s:
