@@ -82,10 +82,4 @@ for l in stdin:
         letter = ns[:n]
         ns = ns[n:]
         o+=d2[letter]
-    # while ns:
-    #     letter = d2[ns[:s[i]]]
-    #     i+=1
-    #     ns = ns[s[i]:]
-    #     o += letter
-    #s = reversed(s)
     print(o)
