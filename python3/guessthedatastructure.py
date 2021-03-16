@@ -38,6 +38,8 @@ for l in stdin:
         print("not sure")
     elif q  and (s or pq):
         print("not sure")
+    elif pq  and (s or q):
+        print("not sure")
     elif s and (not q and not pq):
         print("stack")
     elif q and (not s and not pq):
