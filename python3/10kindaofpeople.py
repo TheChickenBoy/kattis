@@ -1,23 +1,37 @@
 import sys
+import heapq
 
-info = input()
-info = info.split()
-m = []
-for i in range(0,int(info[0])):
-    m.append(input())
+def floodfill(x, y,sp):
+    unvisited = []
+    heapq.heappush(unvisited, (x, y))
+    while unvisited:
+        pos = heapq.heappop(unvisited)
+        x, y = pos[0], pos[1]
+        if m[x][y] == sp:
+            m[x][y] = -1
+            if x > 0 and m[x-1][y] == sp:
+                heapq.heappush(unvisited, (x-1, y))
+            if y > 0 and m[x][y-1] == sp:
+                heapq.heappush(unvisited, (x, y-1))
+            if y < c - 1 and m[x][y+1] == sp:
+                heapq.heappush(unvisited, (x, y+1))
+            if x < r - 1 and m[x+1][y] == sp:
+                heapq.heappush(unvisited, (x+1, y))
 
-#print(*m)
-n = int(input())
-
-for l in sys.stdin:
-    cords=l.split()
-    print('Start: ('+cords[0]+','+cords[1]+')', 'Goal: ('+cords[2]+','+cords[3]+')')
-
-    line = m[int(cords[0])-1]
-    pos = line[int(cords[1])-1]
-    gline = m[int(cords[2])-1]
-    gpos = gline[int(cords[3])-1]
-
-    if pos != gpos:
-        print('neither')
+r, c = [int(x) for x in sys.stdin.readline().split()]
+m = [0]*r
+for i in range(r):
+    l = list(sys.stdin.readline().strip())
+    m[i] = l
+for _ in range(int(input())):
+    x1,y1,x2,y2 = [int(x) - 1 for x in sys.stdin.readline().split()]
+    sp = m[x1][y1]
+    gp = m[x2][y2]
+    if sp != gp:
+        print("neither")
         continue
+    floodfill(x1, y1, sp)
+    if sp == "1":
+        print("decimal")
+    else:
+        print("binary")
