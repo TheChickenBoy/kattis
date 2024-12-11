@@ -1,0 +1,1 @@
+print(input() if input() == '1' else "blandad best")
